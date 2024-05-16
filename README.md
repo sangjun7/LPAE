@@ -6,3 +6,8 @@ Sangjun Han, Taeil Hur, Youngmi Hur, "Laplacian Pyramid-like Autoencoder", In: A
 
 The pretrained parameters are provided by Google Drive. 
 https://drive.google.com/drive/folders/1uVY4yn3K4n-2EWi1A9f0mUbQdaHgntXQ?usp=sharing
+
+`chatlean_bfs.py` is to search for a mathematical proofs using BFS. To run the code, use the following command:
+```
+python scripts/chatlean_bfs.py --API_key [OpenAI API key] --minif2f [Path for minif2f dataset] --model [Model name] --temperature [Temperature] --ex_data datasets/prompt_examples/examples.json --num_sample [Number of Samples] --result_fname [Name of result file]
+```
