@@ -14,6 +14,9 @@ If you find some troubles in torch or torchvision, please leave an issue.
 
 If you want to use other version of pytorch, you can find in https://pytorch.org/get-started/previous-versions/
 
+For other requirements, please install by requirements.txt
+```pip install -r requirements.txt```
+
 ## Test
 We provide just one test code `div2k_srnet/test_real_img.py` for the super-resolution experiment of LPSR trained on DIV2K.  
 This code takes images in a target directory as input, enlarges them by 2, 4, or 8 times, and then saves them.  
