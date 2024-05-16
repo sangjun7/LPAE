@@ -19,7 +19,7 @@ parser.add_argument('--imrandcrop', action='store_true', help='Whether to crop r
 parser.add_argument('--imrandcrop_h', default=128, help='Height size to crop randomly input image')
 parser.add_argument('--imrandcrop_w', default=128, help='Width size to crop randomly input image')
 
-parser.add_argument('--testdata', default=None, help='Path for validation dataset')
+parser.add_argument('--testdata', default=None, help='Directory path for test images')
 parser.add_argument('--trained_ae', default=None, help='Path for a trained Autoencoder model')
 parser.add_argument('--trained_srnet', default=None, help='Path for a trained SR model')
 
