@@ -7,6 +7,11 @@ Sangjun Han, Taeil Hur, Youngmi Hur, "Laplacian Pyramid-like Autoencoder", In: A
 The pretrained parameters are provided by Google Drive. 
 https://drive.google.com/drive/folders/1uVY4yn3K4n-2EWi1A9f0mUbQdaHgntXQ?usp=sharing
 
+## Setting
+For our codes, pytorch and torchvision is required.  
+We only check the 2.0.1 version of pytorch and  in recent.
+If you want to use other version of pytorch, you can find in https://pytorch.org/get-started/previous-versions/
+
 ## Test
 We provide just one test code `div2k_srnet/test_real_img.py` for the super-resolution experiment of LPSR trained on DIV2K.  
 This code takes images in a target directory as input, enlarges them by 2, 4, or 8 times, and then saves them.  
