@@ -23,3 +23,11 @@ If you want to use GPU, then you should add arguments for gpu `--cuda`, `--ngpu 
 If you want to resize or to crop randomly input images,then you should add arguments  
 `--imresize`, `--imresize_h [Height of resized image]`, and `--imresize_w [Width of resized image]` for resizing,  
 `--imrandcrop`, `--imrandcrop_h [Height of randomly cropped image]`, and `--imrandcrop_w [Width of randomly cropped image]` for randomly cropping.
+
+For example, you can enlarge Set5 images by 2 times with 1 GPU and save them:
+```
+python div2k_srnet/test_real_img.py --mag 2 --testdata ./datasets/Set5 --trained_ae ./model_save/wae_change_structure_div2k_rec_l1.pth
+--trained_srnet ./model_save/wae_srnet_structure_change_rec_l1_div2k_2mag.pth --save --save_path ./results --workers 4 --cuda --ngpu 1 --initial_gpu 0
+```
+
+
