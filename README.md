@@ -18,7 +18,8 @@ python div2k_srnet/test_real_img.py --mag [Scale factor between [2, 4, 8]] --tes
 --trained_srnet [Path for a trained SR model] --save --save_path [Path to save result images] --workers [Number of cpu workers]
 ```
 
-If you want to use GPU, then you should add arguments for gpu `--cuda`, `--ngpu [Number of GPU to use]`, and `--initial_gpu [Initial number of GPU]`.  
+If you want to use GPU, then you should add arguments for gpu `--cuda`, `--ngpu [Number of GPU to use]`, and `--initial_gpu [Initial number of GPU]`. 
+
 If you want to resize or to crop randomly input images,then you should add arguments  
 `--imresize`, `--imresize_h [Height of resized image]`, and `--imresize_w [Width of resized image]` for resizing,  
 `--imrandcrop`, `--imrandcrop_h [Height of randomly cropped image]`, and `--imrandcrop_w [Width of randomly cropped image]` for randomly cropping.
