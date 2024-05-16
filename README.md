@@ -14,5 +14,10 @@ Generalization of this code or code for other models will be posted later.
 
 To run the code, use the following command:
 ```
-python scripts/chatlean_bfs.py --API_key [OpenAI API key] --minif2f [Path for minif2f dataset] --model [Model name] --temperature [Temperature] --ex_data datasets/prompt_examples/examples.json --num_sample [Number of Samples] --result_fname [Name of result file]
+python div2k_srnet/test_real_img.py --mag [Scale factor between [2, 4, 8]] --testdata [Directory path of test images] --trained_ae [Path for a trained Auto-encoder model]
+--trained_srnet [Path for a trained SR model] --save --save_path [Path to save result images] --workers [Number of cpu workers]
 ```
+If you want to use GPU, then you should add arguments for gpu `--cuda`, `--ngpu [Number of GPU to use]`, and `--initial_gpu [Initial number of GPU]`.
+If you want to resize or to crop randomly input images, 
+then you should add arguments `--imresize`, `--imresize_h [Height of resized image]`, and `--imresize_w [Width of resized image]` for resizing,
+`--imrandcrop`, `--imrandcrop_h [Height of randomly cropped image]`, and `--imrandcrop_w [Width of randomly cropped image]` for randomly cropping.
