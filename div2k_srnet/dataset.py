@@ -135,4 +135,58 @@ class ImageDatasetFromFile(data.Dataset):
     def __len__(self):
         return len(self.image_filenames)
         
+#=======================================================================================================================================
+def load_test_image(img_path, is_resize=False, resize_h=144, resize_w=None, is_rcrop=False, crop_h=128, crop_w=None, grayscale=False):
+
+    #open img
+    img = Image.open(img_path)
+    if grayscale and img.mode != 'L' :
+        img = img.convert('L')
+    if grayscale is False and img.mode != 'RGB' :
+        img = img.convert('RGB')
+    
+    #augmentation
+    if is_resize :
+        if resize_w is None :
+            resize_w = resize_h
+        img = img.resize((resize_w, resize_h), Image.BICUBIC)
+    if is_rcrop :
+        [w, h] = img.size
+        if crop_w is None :
+            crop_w = crop_h
+        cx1 = random.randint(0, w-crop_w)
+        cx2 = cx1 + crop_w
+        cy1 = random.randint(0, h-crop_h)
+        cy2 = cy1 + crop_h
         
+        img = img.crop((cx1, cy1, cx2, cy2))
+            
+    return img
+
+class RealImgTest(data.Dataset):
+    def __init__(self, root_path, is_resize=False, resize_h=144, resize_w=None, is_rcrop=False, crop_h=128, crop_w=None, grayscale=False):
+        super(RealImgTest, self).__init__()
+        
+        self.img_path = root_path
+        self.img_lst = listdir(root_path)
+        self.is_resize = is_resize
+        self.resize_h = resize_h
+        self.resize_w = resize_w
+        self.is_rcrop = is_rcrop
+        self.crop_h = crop_h
+        self.crop_w = crop_w
+        self.grayscale = grayscale          
+        self.transform = transforms.ToTensor()
+                               
+    def __getitem__(self, index):
+                               
+        path = '/'.join([self.img_path, self.img_lst[index]])
+        img = load_test_image(path, is_resize=self.is_resize, resize_h=self.resize_h, resize_w=self.resize_w, 
+                         is_rcrop=self.is_rcrop, crop_h=self.crop_h, crop_w=self.crop_w, grayscale=self.grayscale)
+        img = self.transform(img)
+        
+        return img
+        
+    def __len__(self):
+        
+        return len(self.img_lst)
