@@ -14,8 +14,8 @@ Generalization of this code or code for other models will be posted later.
 
 To run the code, use the following command:
 ```
-python div2k_srnet/test_real_img.py --mag [Scale factor between [2, 4, 8]] --testdata [Directory path of test images] \\
---trained_ae [Path for a trained Auto-encoder model] --trained_srnet [Path for a trained SR model] \\
+python div2k_srnet/test_real_img.py --mag [Scale factor between [2, 4, 8]] --testdata [Directory path of test images] \
+--trained_ae [Path for a trained Auto-encoder model] --trained_srnet [Path for a trained SR model] \
 --save --save_path [Path to save result images] --workers [Number of cpu workers]
 ```
 
@@ -27,8 +27,8 @@ If you want to resize or to crop randomly input images,then you should add argum
 
 For example, you can enlarge Set5 images by 2 times with 1 GPU and save them:
 ```
-python div2k_srnet/test_real_img.py --mag 2 --testdata ./datasets/Set5 \\
---trained_ae ./model_save/wae_change_structure_div2k_rec_l1.pth --trained_srnet ./model_save/wae_srnet_structure_change_rec_l1_div2k_2mag.pth \\
+python div2k_srnet/test_real_img.py --mag 2 --testdata ./datasets/Set5 \
+--trained_ae ./model_save/wae_change_structure_div2k_rec_l1.pth --trained_srnet ./model_save/wae_srnet_structure_change_rec_l1_div2k_2mag.pth \
 --save --save_path ./results --workers 4 --cuda --ngpu 1 --initial_gpu 0
 ```
 
