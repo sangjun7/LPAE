@@ -13,11 +13,11 @@ from utils import *
 parser = argparse.ArgumentParser(description='LPAE + SRNet for DIV2K')
 parser.add_argument('--mag', default=2, type=int, help='Magnification of image (one of the number between 2,4,8)')
 parser.add_argument('--imresize', action='store_true', help='Whether to resize input image or not')
-parser.add_argument('--imresize_h', default=128, help='Height size to resize input image')
-parser.add_argument('--imresize_w', default=128, help='Width size to resize input image')
+parser.add_argument('--imresize_h', default=128, type=int, help='Height size to resize input image')
+parser.add_argument('--imresize_w', default=128, type=int, help='Width size to resize input image')
 parser.add_argument('--imrandcrop', action='store_true', help='Whether to crop randomly input image or not')
-parser.add_argument('--imrandcrop_h', default=128, help='Height size to crop randomly input image')
-parser.add_argument('--imrandcrop_w', default=128, help='Width size to crop randomly input image')
+parser.add_argument('--imrandcrop_h', default=128, type=int, help='Height size to crop randomly input image')
+parser.add_argument('--imrandcrop_w', default=128, type=int, help='Width size to crop randomly input image')
 
 parser.add_argument('--testdata', default=None, help='Directory path for test images')
 parser.add_argument('--trained_ae', default=None, help='Path for a trained Autoencoder model')
@@ -29,7 +29,7 @@ parser.add_argument('--save_path', default=None, help='Path to save result image
 parser.add_argument('--workers', default=4, type=int, help='Number of workers')
 parser.add_argument('--cuda', action='store_true', help='Use CUDA device')
 parser.add_argument('--ngpu', default=1, type=int, help='Number of GPUs')
-parser.add_argument('--initial_gpu', type=int, default=0, help='Initial gpu')
+parser.add_argument('--initial_gpu', default=0, type=int, help='Initial gpu')
 
 args = parser.parse_args()
 
