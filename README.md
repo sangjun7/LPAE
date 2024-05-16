@@ -10,6 +10,7 @@ https://drive.google.com/drive/folders/1uVY4yn3K4n-2EWi1A9f0mUbQdaHgntXQ?usp=sha
 ## Setting
 For our codes, pytorch and torchvision is required.  
 We only check the 2.0.1 version of pytorch and  in recent. But we expect that there are no problems for torch > 1.8.1.  
+If you find some trouble in torch or torchvision, please leave issue.
 
 If you want to use other version of pytorch, you can find in https://pytorch.org/get-started/previous-versions/
 
