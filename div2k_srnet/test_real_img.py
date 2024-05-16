@@ -235,10 +235,8 @@ with torch.no_grad():
             trec_pred = net_rec(yc_rec=trec2, yd_rec=twpoutd[2])
         time_sum += (time.time() - start_time)
 
-        print(trec_pred.size(), trec_pred.type())
-        print(trec_pred.min(), trec_pred.max())
+        print('The size of SR : Height: {}, Width: {}'.format(trec_pred.size(2), trec_pred.size(3)))
         if args.save:
             imgsave(trec_pred, args.save_path, 'result{}'.format(testiter+1))
-            
+
     print("Time: {:.2f} s".format(time_sum))
-                    
